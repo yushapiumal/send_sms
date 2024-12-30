@@ -6,17 +6,21 @@ import 'package:permission_handler/permission_handler.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SMS Listener App',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: SmsHomePage(),
+      home: const SmsHomePage(),
     );
   }
 }
 
 class SmsHomePage extends StatefulWidget {
+  const SmsHomePage({super.key});
+
   @override
   _SmsHomePageState createState() => _SmsHomePageState();
 }
@@ -60,7 +64,7 @@ class _SmsHomePageState extends State<SmsHomePage> {
     // Check permissions before sending SMS
     if (await Permission.sms.isGranted) {
       sendSms("Your first message", ["+94768024806"]); // Replace with actual number
-      sendSms("Your second message", ["+1234567890"]); // Replace with actual number
+      sendSms("Your second message",["+94762926811"]); // Replace with actual number
     } else {
       _checkAndRequestPermissions();
     }
